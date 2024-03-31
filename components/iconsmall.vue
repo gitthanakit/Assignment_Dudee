@@ -1,16 +1,34 @@
 <template>
-  <div class="hover-icon">
-    <!-- <Icon :name="url" size="50px" class="text-center" /> -->
-    <img :src="url" alt="" class="image-icon" />
-    <p>{{ iconname }}</p>
+  <div class="hover-icon" v-for="(item, index) in iconsmall">
+    <!-- <img :src="item.url" alt="" class="image-icon" /> -->
+    <Icon :name="item.iconname" class="iconsize"></Icon>
+    <p>{{ item.name }}</p>
   </div>
 </template>
 
 <script setup lang="ts">
-defineProps<{
-  url?: string;
-  iconname?: string;
-}>();
+const iconsmall = ref([
+  {
+    url: "/simple-icons_gamemaker.svg",
+    iconname: "simple-icons:gamemaker",
+    name: "ทัวร์นาเมนต์ทั้งหมด",
+  },
+  {
+    url: "/mdi_announcement.svg",
+    iconname: "mdi:megaphone",
+    name: "ประกาศ",
+  },
+  {
+    url: "/material-symbols_rewarded-ads-rounded.svg",
+    iconname: "mage:trophy-star-fill",
+    name: "ผลรางวัล",
+  },
+  {
+    url: "/icon-park-solid_ranking-list.svg",
+    iconname: "icon-park-solid:alignment-bottom-center",
+    name: "ตารางอันดับ",
+  },
+]);
 </script>
 
 <style>
@@ -19,5 +37,8 @@ defineProps<{
 }
 .image-icon {
   @apply block mx-auto md:w-12 sm:w-10 w-8;
+}
+.iconsize {
+  @apply lg:text-[48px] md:text-[40px] sm:text-[36px] text-[30px];
 }
 </style>

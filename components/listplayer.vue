@@ -8,75 +8,37 @@
     </div>
     <div>
       <div
-        class="grid-temp-cols cols-top3 list-block bg-[#FDD835] border-[#F39E09]"
+        :class="[
+          index == 0
+            ? 'grid-temp-cols cols-top3 list-block bg-[#FDD835] border-[#F39E09]'
+            : index == 1
+            ? 'grid-temp-cols cols-top3 list-block bg-[#CDCDE9] border-[#CDCDE9]'
+            : index == 2
+            ? 'grid-temp-cols cols-top3 list-block bg-[#FA6B25] border-[#F9914A]'
+            : 'grid-temp-cols list-block',
+        ]"
+        v-for="(item, index) in listplayer"
       >
-        <img class="img-no" src="/no1.png" alt="" />
+        <img class="img-no" :src="item.image" alt="" />
         <div class="flex">
           <img class="img-profile-list" src="/profile-image.png" alt="" />
-          <div class="text-point-list">TIGER88RI0399</div>
+          <div class="text-point-list">{{ item.name }}</div>
         </div>
-        <p class="text-point-list text-[#C96203]">3500</p>
+        <p class="text-point-list text-[#C96203]">{{ item.point }}</p>
         <div class="text-point-list">
-          <p class="bg-[#FDD835] reward-list-top3">IPHONE12</p>
-        </div>
-      </div>
-      <div
-        class="grid-temp-cols cols-top3 list-block bg-[#CDCDE9] border-[#CDCDE9]"
-      >
-        <img class="img-no" src="/no2.png" alt="" />
-        <div class="flex">
-          <img class="img-profile-list" src="/profile-image.png" alt="" />
-          <div class="text-point-list">RGRP8GG01577</div>
-        </div>
-        <p class="text-point-list text-[#C96203]">3200</p>
-        <div class="text-point-list">
-          <p class="bg-[#CDCDE9] reward-list-top3">VR</p>
-        </div>
-      </div>
-      <div
-        class="grid-temp-cols cols-top3 list-block bg-[#FA6B25] border-[#F9914A]"
-      >
-        <img class="img-no" src="/no3.png" alt="" />
-        <div class="flex">
-          <img class="img-profile-list" src="/profile-image.png" alt="" />
-          <div class="text-point-list">RGRP8GG01577</div>
-        </div>
-        <p class="text-point-list text-[#C96203]">3000</p>
-        <div class="text-point-list">
-          <p class="bg-[#D34C46] reward-list-top3">Mouse Gaming</p>
-        </div>
-      </div>
-      <div class="grid-temp-cols list-block">
-        <img class="img-no" src="/no4.png" alt="" />
-        <div class="flex">
-          <img class="img-profile-list" src="/profile-image.png" alt="" />
-          <div class="text-point-list">RGRP8GG01577</div>
-        </div>
-        <p class="text-point-list text-[#C96203]">2000</p>
-        <div class="text-point-list">
-          <p>200 coins</p>
-        </div>
-      </div>
-      <div class="grid-temp-cols list-block">
-        <img class="img-no" src="/no5.png" alt="" />
-        <div class="flex">
-          <img class="img-profile-list" src="/profile-image.png" alt="" />
-          <div class="text-point-list">RGRP8GG01577</div>
-        </div>
-        <p class="text-point-list text-[#C96203]">1500</p>
-        <div class="text-point-list">
-          <p>100 coins</p>
-        </div>
-      </div>
-      <div class="grid-temp-cols list-block">
-        <img class="img-no" src="/no4.png" alt="" />
-        <div class="flex">
-          <img class="img-profile-list" src="/profile-image.png" alt="" />
-          <div class="text-point-list">RGRP8GG01577</div>
-        </div>
-        <p class="text-point-list text-[#C96203]">1450</p>
-        <div class="text-point-list">
-          <p>50 coins</p>
+          <p
+            :class="[
+              index == 0
+                ? 'bg-[#FDD835] reward-list-top3'
+                : index == 1
+                ? 'bg-[#CDCDE9] reward-list-top3'
+                : index == 2
+                ? 'bg-[#D34C46] reward-list-top3'
+                : '',
+            ]"
+          >
+            {{ item.rewards }}
+          </p>
         </div>
       </div>
     </div>
@@ -84,12 +46,44 @@
 </template>
 
 <script setup lang="ts">
-defineProps<{
-  no?: string;
-  img?: string;
-  name?: string;
-  imgbttn?: string;
-}>();
+const listplayer = ref([
+  {
+    image: "/no1.png",
+    name: "TIGER88RI0399",
+    point: "3500",
+    rewards: "IPHONE12",
+  },
+  {
+    image: "/no2.png",
+    name: "RGRP8GG01577",
+    point: "3200",
+    rewards: "VR",
+  },
+  {
+    image: "/no3.png",
+    name: "KGTR3311190122",
+    point: "3000",
+    rewards: "Mouse Gaming",
+  },
+  {
+    image: "/no4.png",
+    name: "JKL0023441848",
+    point: "2000",
+    rewards: "200 coins",
+  },
+  {
+    image: "/no5.png",
+    name: "RWS2II77102641",
+    point: "1500",
+    rewards: "100 coins",
+  },
+  {
+    image: "/no6.png",
+    name: "AZQ82II4102672",
+    point: "1450",
+    rewards: "50 coins",
+  },
+]);
 </script>
 
 <style>
@@ -107,7 +101,7 @@ defineProps<{
 }
 
 .reward-list-top3 {
-  @apply sm:w-36 w-[96px] px-2 py-1 rounded-full text-white break-all text-center;
+  @apply sm:w-36 w-[100px] px-2 py-1 rounded-full text-white break-all text-center;
 }
 .grid-temp-cols {
   @apply grid sm:gap-2 text-xs md:px-3 px-2;

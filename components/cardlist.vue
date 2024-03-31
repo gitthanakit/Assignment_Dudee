@@ -23,53 +23,33 @@
     </div>
     <div class="div-cover-cardlist">
       <div class="div-grid-cover-card grid-cols-3">
-        <div class="large-card-frame large-card-frame-yellow">
-          <p class="no-reward large-no">1<sup>th</sup></p>
-          <img src="/telephone.png" alt="" class="large-card-img" />
+        <div
+          :class="[
+            index == 0
+              ? 'large-card-frame large-card-frame-yellow'
+              : index == 1
+              ? 'large-card-frame large-card-frame-grey'
+              : 'large-card-frame large-card-frame-orange',
+          ]"
+          v-for="(item, index) in cardlist.slice(0, 3)"
+        >
+          <p class="no-reward large-no">{{ index + 1 }}<sup>th</sup></p>
+          <img :src="item.image" alt="" class="large-card-img" />
           <p class="large-card-text-score">Score</p>
-          <p class="large-card-score">3500</p>
-          <p class="large-card-awards">Iphone 12</p>
-          <p class="large-card-awards">+150 coins 5 TICKET</p>
-        </div>
-        <div class="large-card-frame large-card-frame-grey">
-          <p class="no-reward large-no">2<sup>th</sup></p>
-          <img src="/vr.png" alt="" class="large-card-img" />
-          <p class="large-card-text-score">Score</p>
-          <p class="large-card-score">3200</p>
-          <p class="large-card-awards">VR</p>
-          <p class="large-card-awards">+150 TICKET</p>
-        </div>
-        <div class="large-card-frame large-card-frame-orange">
-          <p class="no-reward large-no">3<sup>th</sup></p>
-          <img src="/mousecom.png" alt="" class="large-card-img" />
-          <p class="large-card-text-score">Score</p>
-          <p class="large-card-score">3000</p>
-          <p class="large-card-awards">Mouse Gaming</p>
+          <p class="large-card-score">{{ item.point }}</p>
+          <p class="large-card-awards">{{ item.rewards }}</p>
+          <p class="large-card-awards">{{ item.ticketamount }}</p>
         </div>
       </div>
 
       <div class="div-grid-cover-card grid-cols-4 my-6">
-        <div class="small-card-frame">
-          <p class="no-reward">4<sup>th</sup></p>
-          <img src="/flashdrives.png" alt="" class="small-card-img" />
-          <p>USB 2.0</p>
-        </div>
-
-        <div class="small-card-frame">
-          <p class="no-reward">5<sup>th</sup></p>
-          <img src="/coins.png" alt="" class="small-card-img" />
-          <p class="align-bottom">USB 2.0</p>
-        </div>
-
-        <div class="small-card-frame">
-          <p class="no-reward">6<sup>th</sup></p>
-          <img src="/coins.png" alt="" class="small-card-img" />
-          <p>USB 2.0</p>
-        </div>
-        <div class="small-card-frame">
-          <p class="no-reward">7<sup>th</sup></p>
-          <img src="/coupons.png" alt="" class="small-card-img" />
-          <p>USB 2.0</p>
+        <div
+          class="small-card-frame"
+          v-for="(item, index) in cardlist.slice(3)"
+        >
+          <p class="no-reward">{{ index + 4 }}<sup>th</sup></p>
+          <img :src="item.image" alt="" class="small-card-img" />
+          <p>{{ item.rewards }}</p>
         </div>
       </div>
     </div>
@@ -171,3 +151,50 @@ li {
   @apply lg:mt-[-34px] mt-[-16px]  h-auto mx-auto;
 }
 </style>
+
+<script setup lang="ts">
+const cardlist = ref([
+  {
+    image: "/telephone.png",
+    point: "3500",
+    rewards: "Iphone 12",
+    ticketamount: "+150 coins 5 TICKET",
+  },
+  {
+    image: "/vr.png",
+    point: "3200",
+    rewards: "VR",
+    ticketamount: "+150 TICKET",
+  },
+  {
+    image: "/mousecom.png",
+    point: "3000",
+    rewards: "Mouse Gaming",
+    ticketamount: "",
+  },
+  {
+    image: "/flashdrives.png",
+    point: "",
+    rewards: "USB 2.0",
+    ticketamount: "",
+  },
+  {
+    image: "/coins.png",
+    point: "",
+    rewards: "150 Coins",
+    ticketamount: "",
+  },
+  {
+    image: "/coins.png",
+    point: "",
+    rewards: "100 Coins",
+    ticketamount: "",
+  },
+  {
+    image: "/coupons.png",
+    point: "",
+    rewards: "5 TICKET",
+    ticketamount: "",
+  },
+]);
+</script>
