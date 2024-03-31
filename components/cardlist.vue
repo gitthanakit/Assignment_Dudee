@@ -92,7 +92,7 @@
   @apply text-[#AFAFAF] bg-[#F6F6F6]  md:px-[18px]  px-[10px] py-[4px] rounded-full lg:text-lg sm:text-base text-sm;
 }
 .bttn-visit-event {
-  @apply flex items-center justify-center gap-2 font-bold text-black lg:text-lg sm:text-base text-sm;
+  @apply flex items-center justify-center gap-4 font-bold text-black lg:text-lg sm:text-base text-sm;
 }
 ul.dashed > li {
   text-indent: -5px;

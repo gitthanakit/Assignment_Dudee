@@ -13,7 +13,7 @@
     </div>
   </div>
 
-  <div class="md:container mx-auto lg:px-36">
+  <div class="md:container mx-auto xl:px-[200px] lg:px-[80px]">
     <div class="bg-zinc-50 w-full grid gap-y-5">
       <cardlist />
       <Listplayer />

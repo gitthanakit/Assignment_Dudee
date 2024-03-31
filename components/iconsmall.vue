@@ -33,12 +33,12 @@ const iconsmall = ref([
 
 <style>
 .hover-icon {
-  @apply lg:py-3 sm:py-1 lg:px-20 md:px-16 sm:px-10 px-3 my-2 rounded-lg text-center hover:bg-[#1F2B6A] hover:text-[#FDD835] lg:text-base md:text-sm sm:text-sm text-[12px];
+  @apply lg:py-3 sm:py-1 lg:mx-4 sm:mx-2 mx-1 sm:px-10 px-3 my-2 rounded-lg text-center hover:bg-[#1F2B6A] hover:text-[#FDD835] lg:text-base md:text-sm sm:text-sm text-[12px];
 }
 .image-icon {
   @apply block mx-auto md:w-12 sm:w-10 w-8;
 }
 .iconsize {
-  @apply lg:text-[48px] md:text-[40px] sm:text-[36px] text-[30px];
+  @apply lg:text-[46px] md:text-[40px] sm:text-[36px] text-[30px];
 }
 </style>
