@@ -101,7 +101,7 @@ const listplayer = ref([
 }
 
 .reward-list-top3 {
-  @apply sm:w-36 w-[100px] px-2 py-1 rounded-full text-white break-all text-center;
+  @apply sm:w-36 w-[96px] px-1 py-1 rounded-full text-white break-all text-center;
 }
 .grid-temp-cols {
   @apply grid sm:gap-2 text-xs md:px-3 px-2;
