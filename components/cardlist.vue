@@ -1,9 +1,9 @@
 <template>
   <div class="px-[22px]">
     <div class="flex justify-between pt-[16px] pb-[22px]">
-      <div class="flex items-center justify-center gap-2 grid-cols-2">
+      <button class="bttn-visit-event">
         <svg
-          class="w-6 h-6 text-gray-800 dark:text-black font-light"
+          class="arrow-bttn-event"
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -17,32 +17,30 @@
             d="M10 5H1m0 0 4 4M1 5l4-4"
           ></path>
         </svg>
-        <p class="font-bold text-black">ทัวร์นาเมนต์ บี</p>
-      </div>
-      <div class="text-[#AFAFAF] bg-[#F6F6F6] py-[8px] px-[22px] rounded-full">
-        หมดเวลากิจกรรม
-      </div>
+        <p>ทัวร์นาเมนต์ บี</p>
+      </button>
+      <div class="time-date-event">หมดเวลากิจกรรม</div>
     </div>
-    <div class="px-10">
-      <div class="flex items-center justify-center gap-4 grid grid-cols-3">
-        <div class="large-card-frame-yellow">
-          <p class="large-no">1<sup>th</sup></p>
+    <div class="div-cover-cardlist">
+      <div class="div-grid-cover-card grid-cols-3">
+        <div class="large-card-frame large-card-frame-yellow">
+          <p class="no-reward large-no">1<sup>th</sup></p>
           <img src="/telephone.png" alt="" class="large-card-img" />
           <p class="large-card-text-score">Score</p>
           <p class="large-card-score">3500</p>
           <p class="large-card-awards">Iphone 12</p>
           <p class="large-card-awards">+150 coins 5 TICKET</p>
         </div>
-        <div class="large-card-frame-grey">
-          <p class="large-no">2<sup>th</sup></p>
+        <div class="large-card-frame large-card-frame-grey">
+          <p class="no-reward large-no">2<sup>th</sup></p>
           <img src="/vr.png" alt="" class="large-card-img" />
           <p class="large-card-text-score">Score</p>
           <p class="large-card-score">3200</p>
           <p class="large-card-awards">VR</p>
           <p class="large-card-awards">+150 TICKET</p>
         </div>
-        <div class="large-card-frame-orange">
-          <p class="large-no">3<sup>th</sup></p>
+        <div class="large-card-frame large-card-frame-orange">
+          <p class="no-reward large-no">3<sup>th</sup></p>
           <img src="/mousecom.png" alt="" class="large-card-img" />
           <p class="large-card-text-score">Score</p>
           <p class="large-card-score">3000</p>
@@ -50,57 +48,72 @@
         </div>
       </div>
 
-      <div class="flex items-center justify-center gap-4 grid grid-cols-4 my-6">
+      <div class="div-grid-cover-card grid-cols-4 my-6">
         <div class="small-card-frame">
-          <p class="small-card-no">4<sup>th</sup></p>
+          <p class="no-reward">4<sup>th</sup></p>
           <img src="/flashdrives.png" alt="" class="small-card-img" />
           <p>USB 2.0</p>
         </div>
 
         <div class="small-card-frame">
-          <p class="small-card-no">5<sup>th</sup></p>
+          <p class="no-reward">5<sup>th</sup></p>
           <img src="/coins.png" alt="" class="small-card-img" />
           <p class="align-bottom">USB 2.0</p>
         </div>
 
         <div class="small-card-frame">
-          <p class="small-card-no">6<sup>th</sup></p>
+          <p class="no-reward">6<sup>th</sup></p>
           <img src="/coins.png" alt="" class="small-card-img" />
           <p>USB 2.0</p>
         </div>
         <div class="small-card-frame">
-          <p class="small-card-no">7<sup>th</sup></p>
+          <p class="no-reward">7<sup>th</sup></p>
           <img src="/coupons.png" alt="" class="small-card-img" />
           <p>USB 2.0</p>
         </div>
       </div>
     </div>
     <div>
-      <div class="text-detail-spacebuttom">
+      <article class="text-pretty text-detail-spacebuttom">
         <p>ทัวร์นาเมนต์แข่งขันยอดเล่นเกมออนไลน์</p>
         <p>
           เริ่มกิจกรรมวันที่ 19 มกราคม 2567 สิ้นสุดกิจกรรมและแจกรางวัล วันที่ 29
           มกราคม 2567
         </p>
-      </div>
-      <div class="text-detail-spacebuttom">
+      </article>
+      <article class="text-pretty text-detail-spacebuttom">
         <p>กติกาการแข่งขัน</p>
         <ol class="list-decimal list-outside">
           <li>แข่งขันยอดเล่นเกมออนไลน์</li>
           <li>แจกรางวัลให้ผู้เล่นที่ได้ลำดับที่ 1, 2, 7</li>
         </ol>
-      </div>
-      <div class="text-detail-spacebuttom">
+      </article>
+      <article class="text-pretty text-detail-spacebuttom">
         <p>รางวัลที่ได้รับ</p>
         <ul class="list-none dashed list-outside">
           <li>ตั๋วนำโชค 100 รางวัล</li>
         </ul>
-      </div>
+      </article>
     </div>
   </div>
 </template>
 
 <style>
+.div-cover-cardlist {
+  @apply sm:px-10 px-4;
+}
+.div-grid-cover-card {
+  @apply lg:gap-4 sm:gap-2 sm:grid;
+}
+.arrow-bttn-event {
+  @apply md:w-6 md:h-6 w-4 h-4 text-gray-800 dark:text-black font-light;
+}
+.time-date-event {
+  @apply text-[#AFAFAF] bg-[#F6F6F6]  md:px-[18px]  px-[10px] py-[4px] rounded-full lg:text-lg sm:text-base text-sm;
+}
+.bttn-visit-event {
+  @apply flex items-center justify-center gap-2 font-bold text-black lg:text-lg sm:text-base text-sm;
+}
 ul.dashed > li {
   text-indent: -5px;
 }
@@ -117,43 +130,44 @@ li {
   margin-bottom: 12px;
 }
 
+.no-reward {
+  @apply text-end lg:text-[40px] md:text-[36px] text-[32px];
+}
 /* large-card */
+.large-card-frame {
+  @apply border rounded-lg shadow-md text-center p-[14px] h-full text-[#BA792D] font-bold w-full mb-4;
+}
 .large-card-frame-yellow {
-  @apply border rounded-lg shadow-md text-center p-[14px] h-full text-[#BA792D] font-bold w-full bg-[linear-gradient(360deg,_#fff_60%,64%,_#FDD835_60%)];
+  @apply bg-[linear-gradient(360deg,_#fff_60%,64%,_#FDD835_60%)];
 }
 .large-card-frame-grey {
-  @apply border rounded-lg shadow-md text-center p-[14px] h-full text-[#BA792D] font-bold w-full bg-[linear-gradient(360deg,_#fff_60%,64%,_#AAAACE_60%)];
+  @apply bg-[linear-gradient(360deg,_#fff_60%,64%,_#AAAACE_60%)];
 }
 .large-card-frame-orange {
-  @apply border rounded-lg shadow-md text-center p-[14px] h-full text-[#BA792D] font-bold w-full bg-[linear-gradient(360deg,_#fff_60%,64%,_#E88102_60%)];
+  @apply bg-[linear-gradient(360deg,_#fff_60%,64%,_#E88102_60%)];
 }
 .large-card-img {
-  @apply mt-[-40px] h-auto mx-auto;
+  @apply mt-[-16px] h-auto mx-auto;
 }
-.large-card-no {
-  @apply text-end text-[36px];
-}
+
 .large-card-text-score {
   @apply text-[#AAAAAA] text-[14px] font-medium;
 }
 .large-card-score {
-  @apply text-[#C96203] text-[36px];
+  @apply text-[#C96203] lg:text-[40px] md:text-[36px] text-[32px];
 }
 .large-card-awards {
   @apply text-[#E88102] text-[16px] font-normal;
 }
 .large-no {
-  @apply text-end text-white text-[40px];
+  @apply text-white;
 }
 
 /* small-card */
 .small-card-frame {
-  @apply border rounded-lg shadow-md text-center p-[14px] text-[#BA792D] font-bold w-full h-full;
+  @apply border rounded-lg shadow-md text-center p-[14px] text-[#BA792D] font-bold w-full h-full mb-4;
 }
 .small-card-img {
-  @apply mt-[-40px] h-auto mx-auto;
-}
-.small-card-no {
-  @apply text-end text-[36px];
+  @apply lg:mt-[-34px] mt-[-16px]  h-auto mx-auto;
 }
 </style>

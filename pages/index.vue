@@ -1,9 +1,14 @@
-import Iconsmall from '~/components/iconsmall.vue';
 <template>
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css?family=Kanit"
+      rel="stylesheet"
+    />
+  </head>
   <headbar :amount="'100.00 ฿'" :name="'Usergaming'" />
   <Bigimage :url="'/big-gaming-competition.png'" />
   <div class="bg-blue-800 flex justify-center">
-    <div class="text-white flex gap-8">
+    <div class="text-white flex">
       <Iconsmall
         :url="'/simple-icons_gamemaker.svg'"
         :iconname="'ทัวร์นาเมนต์ทั้งหมด'"
@@ -26,8 +31,9 @@ import Iconsmall from '~/components/iconsmall.vue';
       />
     </div>
   </div>
-  <div class="bg-zinc-300 lg:px-60 md:px-30">
-    <div class="bg-zinc-50 w-full">
+
+  <div class="md:container mx-auto lg:px-36">
+    <div class="bg-zinc-50 w-full grid gap-y-5">
       <cardlist />
       <Listplayer />
       <notificationbutton
@@ -41,6 +47,11 @@ import Iconsmall from '~/components/iconsmall.vue';
 </template>
 
 <style>
+body {
+  @apply bg-zinc-300;
+  font-family: "Kanit";
+}
+
 @import url("https://fonts.googleapis.com/css2?family=Kanit");
 .background-blue {
   background-color: #2237a7;

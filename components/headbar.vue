@@ -1,6 +1,8 @@
 <template>
   <div class="headerbar">
-    <div><img src="/emojione_video-game.png" class="ml-[47px]" /></div>
+    <div class="lg:ml-[47px] md:ml-[10px] sm:ml-[2px]">
+      <img src="/emojione_video-game.png" />
+    </div>
     <div class="flex items-center justify-center gap-4 grid-cols-3">
       <div class="text-center text-white font-medium text-[12px]">
         <p>{{ name }}</p>
@@ -43,7 +45,7 @@
 
 <style>
 .headerbar {
-  @apply bg-blue-800 flex justify-between px-[49px];
+  @apply bg-blue-800 flex justify-between lg:px-[49px] md:px-[20px] sm:px-[10px]  px-3;
 }
 .img-icon {
   @apply w-12 h-12;
